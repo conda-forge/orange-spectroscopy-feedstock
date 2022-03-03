@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -40,10 +40,13 @@ requirements:
 test:
   imports:
     - orangecontrib
+    - orangecontrib.spectroscopy
   commands:
     - pip check
+    - python -m unittest -v orangecontrib.spectroscopy.tests
   requires:
     - pip
+    - unittest
 
 about:
   home: https://github.com/Quasars/orange-spectroscopy
