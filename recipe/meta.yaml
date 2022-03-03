@@ -46,7 +46,6 @@ test:
     - python -m unittest -v orangecontrib.spectroscopy.tests
   requires:
     - pip
-    - unittest
 
 about:
   home: https://github.com/Quasars/orange-spectroscopy
