@@ -1,5 +1,5 @@
 {% set name = "orange-spectroscopy" %}
-{% set version = "0.6.4" %}
+{% set version = "0.6.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/Orange-Spectroscopy-{{ version }}.tar.gz
-  sha256: 7aa505796603ad580bb0290e49e56233c193726b912c18905cd847abb5d2849f
+  sha256: e45d229e5910b0f0e12ca3da062ce7a9a496ceedd45d80fe8bff8cf830c8ea5f
 
 build:
   noarch: python
@@ -50,7 +50,7 @@ about:
   summary: Extends Orange to handle spectral and hyperspectral analysis.
   license: Unlicense
   license_file: LICENSE
-  description: Orange add-on for spectral data analysis. Provides spectra and hyperspectra plotting, interpolation, preprocessing (cutting, smoothing, normalization), and integration. Supports common spectral file formats. 
+  description: Orange add-on for spectral data analysis. Provides spectra and hyperspectra plotting, interpolation, preprocessing (cutting, smoothing, normalization), and integration. Supports common spectral file formats.
   dev_url: https://github.com/Quasars/orange-spectroscopy
   doc_url: https://orange-spectroscopy.readthedocs.io/
 
