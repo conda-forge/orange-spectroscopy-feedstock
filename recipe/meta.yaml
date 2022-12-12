@@ -17,8 +17,9 @@ build:
 requirements:
   host:
     - pip
-    - python >3.8.0
+    - python >=3.9
   run:
+    - setuptools >=36.3
     - anyqt >=0.0.6
     - arm_pyart
     - bottleneck
@@ -35,7 +36,7 @@ requirements:
     - pyqt
     - pyqtgraph >=0.11.1,!=0.12.4
     - renishaw_wire >=0.1.8
-    - python >3.8.0
+    - python >=3.9
     - scipy >=0.14.0
     - scikit-learn
     - serverfiles >=0.2
