@@ -1,5 +1,5 @@
 {% set name = "orange-spectroscopy" %}
-{% set version = "0.6.8" %}
+{% set version = "0.6.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/Orange-Spectroscopy-{{ version }}.tar.gz
-  sha256: 71e2663204505f4137ddaaee38c838250e98ed5ab4446836eeeb7e5d92f00cb1
+  sha256: 2fc550c98f55d03a2a0ef914959e641ff30cc854152cefbe2836395e93fac6bf
 
 build:
   noarch: python
@@ -16,8 +16,11 @@ build:
 
 requirements:
   host:
-    - pip
     - python >=3.9
+    - setuptools
+    - wheel
+    - recommonmark
+    - pip
   run:
     - setuptools >=36.3
     - anyqt >=0.0.6
