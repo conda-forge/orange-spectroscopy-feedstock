@@ -16,8 +16,11 @@ build:
 
 requirements:
   host:
-    - pip
     - python >=3.9
+    - setuptools
+    - wheel
+    - recommonmark
+    - pip
   run:
     - setuptools >=36.3
     - anyqt >=0.0.6
