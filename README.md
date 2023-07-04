@@ -1,11 +1,11 @@
-About orange-spectroscopy
-=========================
+About orange-spectroscopy-feedstock
+===================================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/orange-spectroscopy-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/Quasars/orange-spectroscopy
 
 Package license: Unlicense
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/orange-spectroscopy-feedstock/blob/main/LICENSE.txt)
 
 Summary: Extends Orange to handle spectral and hyperspectral analysis.
 
