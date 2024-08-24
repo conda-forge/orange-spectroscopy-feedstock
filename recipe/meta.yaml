@@ -52,7 +52,7 @@ test:
     - pip check
   requires:
     - pip
-    - xgboost <2.1.1
+    - xgboost =2.0.3 #last one known as supported, job 20240702.2
 
 about:
   home: https://github.com/Quasars/orange-spectroscopy
