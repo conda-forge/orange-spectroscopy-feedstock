@@ -32,7 +32,7 @@ requirements:
     - scipy >=1.9.0
     - scikit-learn >=1.0.1
     - spectral >=0.22.3,!=0.23
-    - serverfiles >=0.2
+    - serverfiles >=0.2, <0.3.0 #error message saying "serverfiles 0.3.0 is not supported on this platform"
     - anyqt >=0.1.0
     - pyqtgraph >=0.12.2,!=0.12.4
     - colorcet
