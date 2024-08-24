@@ -1,5 +1,5 @@
 {% set name = "orange-spectroscopy" %}
-{% set version = "0.6.15" %}
+{% set version = "0.6.16" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: e43e4462a66c0edb47daf39b7f4465f5322981b7e52c94ae2558bbcd8d048e11
+  sha256: bc3aad573697824399c0edfeb0905650d916699ef49f3abd7edc63051fd6c7cc
 
 build:
   noarch: python
@@ -32,7 +32,7 @@ requirements:
     - scipy >=1.9.0
     - scikit-learn >=1.0.1
     - spectral >=0.22.3,!=0.23
-    - serverfiles >=0.2
+    - serverfiles >=0.2, <0.3.0 #error message saying "serverfiles 0.3.0 is not supported on this platform"
     - anyqt >=0.1.0
     - pyqtgraph >=0.12.2,!=0.12.4
     - colorcet
@@ -40,7 +40,7 @@ requirements:
     - extranormal3 >=0.0.3
     - renishaw_wire >=0.1.8
     - pillow
-    - lmfit >=1.0.2,<1.3.0
+    - lmfit >=1.3.2
     - bottleneck
     - pebble
     - agilent-format >=0.4.5
@@ -52,6 +52,7 @@ test:
     - pip check
   requires:
     - pip
+    - xgboost =2.0.3 #last one known as supported, job 20240702.2
 
 about:
   home: https://github.com/Quasars/orange-spectroscopy
