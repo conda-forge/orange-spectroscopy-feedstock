@@ -1,13 +1,13 @@
 {% set name = "orange-spectroscopy" %}
-{% set version = "0.6.16" %}
+{% set version = "0.7.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: bc3aad573697824399c0edfeb0905650d916699ef49f3abd7edc63051fd6c7cc
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 68311a7645862eaa893e58bc2b14ad19d993aa9df9344357dc16eb6e36e0442e
 
 build:
   noarch: python
