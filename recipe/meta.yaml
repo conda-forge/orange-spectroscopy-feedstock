@@ -1,5 +1,5 @@
 {% set name = "orange-spectroscopy" %}
-{% set version = "0.6.16" %}
+{% set version = "0.7.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: bc3aad573697824399c0edfeb0905650d916699ef49f3abd7edc63051fd6c7cc
+  sha256: f2c9bb9c28a9372d04008315f4cce46fa8c7e124c4a0c62a203d2b3e421a244e
 
 build:
   noarch: python
