@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: 697ce55a6aed2381dbbb22e5d37d1d2267c8b0d99bce59c411e4219744110ad9
 
 build:
@@ -16,13 +16,13 @@ build:
 
 requirements:
   host:
-    - python >=3.9
+    - python {{ python_min }}
     - setuptools
     - wheel
     - recommonmark
     - pip
   run:
-    - python >=3.9
+    - python >={{ python_min }}
     - setuptools >=36.3
     - pip >=9.0
     - numpy >=1.20.0,<2.0.0
@@ -54,6 +54,7 @@ test:
     - python -m unittest -v orangecontrib.spectroscopy.tests
   requires:
     - pip
+    - python {{ python_min }}
     - xgboost =2.0.3 #last one known as supported, job 20240702.2
 
 about:
