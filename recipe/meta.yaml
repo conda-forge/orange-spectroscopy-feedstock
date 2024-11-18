@@ -48,7 +48,6 @@ requirements:
 test:
   imports:
     - orangecontrib
-    - orangecontrib.spectroscopy
   commands:
     - pip check
     - python -m unittest -v orangecontrib.spectroscopy.tests
