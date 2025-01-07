@@ -45,7 +45,7 @@ requirements:
     - pebble
     - agilent-format >=0.4.5
     - pandas
-    - matplotlib
+    - matplotlib-base
     - orange3-fairness
 
 test:
