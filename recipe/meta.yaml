@@ -47,6 +47,7 @@ requirements:
     - pandas
     - matplotlib-base
     - orange3-fairness
+    - pysnom >=0.2.0
 
 test:
   imports:
