@@ -47,7 +47,7 @@ requirements:
     - pandas >=1.5.3
     - matplotlib-base
     - orange3-fairness
-    - pysnom >=0.2.0
+    - pysnom >=0.2.0,<0.3 #versionning issue with the 0.3.0 version
 
 test:
   imports:
@@ -58,7 +58,6 @@ test:
     - pip
     - python {{ python_min }}
     - xgboost =2.0.3 #last one known as supported, job 20240702.2
-    - pysnom >=0.2.0,<0.3 #versionning issue with the 0.3.0 version
 
 about:
   home: https://github.com/Quasars/orange-spectroscopy
