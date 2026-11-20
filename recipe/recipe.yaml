@@ -1,28 +1,31 @@
-{% set name = "orange-spectroscopy" %}
-{% set version = "0.9.4" %}
+schema_version: 1
+
+context:
+  name: orange-spectroscopy
+  version: "0.9.4"
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
-  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
   sha256: c95279d4c20ac2c2b8cfc7a86e00a7122825749c6d4936a9b5b5520a52fb8178
 
 build:
+  number: 1
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
-    - python {{ python_min }}.*
+    - python ${{ python_min }}.*
     - setuptools >=61.0
     - wheel
     - recommonmark
     - pip
   run:
-    - python >={{ python_min }},<{{ python_max }}
+    - python >=${{ python_min }},<${{ python_max }}
     - numpy >=1.24.0
     - orange3 >=3.38.0
     - orange-canvas-core >=0.2.4
@@ -40,32 +43,38 @@ requirements:
     - pillow >=9.2.0
     - lmfit >=1.3.3
     - bottleneck
-    - pebble <={{ pebble_max }}
+    - pebble <=${{ pebble_max }}
     - agilent-format >=0.4.5
     - pandas >=1.5.3
     - matplotlib-base
     - orange3-fairness
     - pysnom >=0.2.0
 
-test:
-  imports:
-    - orangecontrib
-  commands:
-    - pip check
-  requires:
-    - pip
-    - python {{ python_min }}.*
-    - xgboost =2.0.3 #last one known as supported, job 20240702.2
-    - gwyfile =0.2.0 #versionning issue
+tests:
+  - python:
+      imports:
+        - orangecontrib
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+  - script:
+      - python -c "import orangecontrib.spectroscopy"
+    requirements:
+      run:
+        # last one known as supported, job 20240702.2
+        - xgboost ==2.0.3
+        # versionning issue
+        - gwyfile ==0.2.0
 
 about:
-  home: https://github.com/Quasars/orange-spectroscopy
   summary: Extends Orange to handle spectral and hyperspectral analysis.
   license: Unlicense
   license_file: LICENSE
   description: Orange add-on for spectral data analysis. Provides spectra and hyperspectra plotting, interpolation, preprocessing (cutting, smoothing, normalization), and integration. Supports common spectral file formats.
-  dev_url: https://github.com/Quasars/orange-spectroscopy
-  doc_url: https://orange-spectroscopy.readthedocs.io/
+  homepage: https://github.com/Quasars/orange-spectroscopy
+  repository: https://github.com/Quasars/orange-spectroscopy
+  documentation: https://orange-spectroscopy.readthedocs.io/
 
 extra:
   recipe-maintainers:
